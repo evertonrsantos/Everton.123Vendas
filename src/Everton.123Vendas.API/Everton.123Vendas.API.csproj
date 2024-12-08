@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>Everton._123Vendas.API</RootNamespace>
+    <UserSecretsId>faf53a39-a7f8-487d-8ae7-975f886cfbb3</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..</DockerfileContext>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.ApiExplorer" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="5.1.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="7.1.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="7.1.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="7.1.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="7.1.0" />
+  </ItemGroup>
+
+</Project>
