@@ -1,6 +1,6 @@
 # 123Vendas - Sistema de Gestão de Vendas
 
-Este projeto implementa uma API para gestão de vendas com ASP.NET Core 8, utilizando práticas de DDD, SOLID e integração com Kafka.
+Este projeto implementa uma API para gestão de vendas com ASP.NET Core 8, utilizando práticas de DDD, SOLID e integração com Envio de Eventos.
 
 ---
 
@@ -9,9 +9,8 @@ Este projeto implementa uma API para gestão de vendas com ASP.NET Core 8, utili
 Antes de rodar o projeto, você precisará ter instalado:
 
 - [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
-- [PostgreSQL](https://www.postgresql.org/download/)
 - [Entity Framework CLI](https://learn.microsoft.com/en-us/ef/core/cli/dotnet) (já incluído no .NET SDK)
-- Configuração do Kafka para publicação de eventos (opcional)
+- [PostgreSQL](https://www.postgresql.org/download/)
 
 ---
 
@@ -26,9 +25,10 @@ Antes de rodar o projeto, você precisará ter instalado:
      }
    }
   ```
-  
+
+
 2. **No seu prompt de comando**:
    Navegue até a pasta raíz do projeto e execute o seguinte comando:
-   ```cmd
+   ```json
    dotnet ef database update -s .\src\Everton.123Vendas.API
-   ```
+  ```
