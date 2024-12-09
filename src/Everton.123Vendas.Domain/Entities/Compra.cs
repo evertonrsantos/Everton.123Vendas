@@ -12,8 +12,8 @@ namespace Everton._123Vendas.Domain.Entities
             DataVenda = dataVenda;
             ClienteId = clienteId;
             CodigoLoja = codigoLoja;
-            Itens = new List<ItemCompra>();
             Cancelada = false;
+            Itens = [];
         }
 
         public string NumeroVenda { get; private set; }
@@ -53,6 +53,18 @@ namespace Everton._123Vendas.Domain.Entities
         {
             Cancelada = true;
             CanceladaEm = DateTime.Now;
+        }
+
+        public void AlterarItens(IEnumerable<ItemCompra> itens)
+        {
+            if(itens == null || !itens.Any())
+            {
+                NotificationWrapper.Add("itens", "Não foi encontrado nenhum item para ser alterado");
+                return;
+            }
+
+            Itens = itens.ToList();
+            AplicarDesconto();
         }
     }
 }

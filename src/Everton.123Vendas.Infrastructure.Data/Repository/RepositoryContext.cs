@@ -25,7 +25,6 @@ namespace Everton._123Vendas.Infrastructure.Data.Repository
 
             configurationBuilder.Conventions.Remove(typeof(ManyToManyCascadeDeleteConvention));
             configurationBuilder.Conventions.Remove(typeof(OneToManyCascadeDeleteConvention));
-            configurationBuilder.Conventions.Remove(typeof(PluralizingTableNameConvention));
 
             base.ConfigureConventions(configurationBuilder);
         }

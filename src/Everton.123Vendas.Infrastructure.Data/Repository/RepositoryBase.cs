@@ -45,7 +45,7 @@ namespace Everton._123Vendas.Infrastructure.Data.Repository
             return await query.ToListAsync();
         }
 
-        public async Task<T> GetByIdAsync(Guid id)
+        public async virtual Task<T> GetByIdAsync(Guid id)
         {
             return await _dbSet.FindAsync(id);
         }
@@ -58,7 +58,6 @@ namespace Everton._123Vendas.Infrastructure.Data.Repository
 
         public async Task UpdateAsync(T entity)
         {
-            _dbSet.Attach(entity);
             _context.Entry(entity).State = EntityState.Modified;
             await _context.SaveChangesAsync();
         }
