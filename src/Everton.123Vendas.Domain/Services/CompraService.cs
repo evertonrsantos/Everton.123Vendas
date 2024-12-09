@@ -53,6 +53,12 @@ namespace Everton._123Vendas.Domain.Services
                 return;
             }
 
+            if (entity.Cancelada)
+            {
+                NotificationWrapper.Add("compra", "Esta compra está cancelada e não pode ser alterada");
+                return;
+            }
+
             if (compra.Itens.Count > 0)
             {
                 await _itemRepository.RemoveRangeAsync(entity.Itens);
