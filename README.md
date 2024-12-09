@@ -21,7 +21,7 @@ Antes de rodar o projeto, você precisará ter instalado:
 	```
 	{
 	  "ConnectionStrings": {
-	   "DefaultConnection": "Host=localhost;Port=5432;Database=123vendas;Username=seu_usuario;Password=sua_senha"
+	    "DefaultConnection": "Host=localhost;Port=5432;Database=123vendas;Username=seu_usuario;Password=sua_senha"
 	  }
 	}
 	```
