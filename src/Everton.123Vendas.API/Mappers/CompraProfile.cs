@@ -14,5 +14,6 @@ public class CompraProfile : Profile
 
         CreateMap<ItemCompra, ItemCompraResponse>();
         CreateMap<Compra, CompraResponse>();
+        CreateMap<Compra, CompraDetalheResponse>();
     }
 }
