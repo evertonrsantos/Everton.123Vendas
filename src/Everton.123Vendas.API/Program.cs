@@ -1,7 +1,12 @@
 using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ApiExplorer;
-using System.Reflection;
+using Microsoft.EntityFrameworkCore;
+using Everton._123Vendas.Infrastructure.Data.Repository;
+using Everton._123Vendas.Infrastructure.IoC;
+using Everton._123Vendas.API.Filters;
+using Everton._123Vendas.API.Mappers;
+using Everton._123Vendas.Domain.Services.Notification;
+using Everton._123Vendas.Domain.Interfaces.Notification;
 
 const string CORS = "CORS";
 var builder = WebApplication.CreateBuilder(args);
@@ -40,9 +45,32 @@ builder.Services.AddVersionedApiExplorer(config =>
 //    opt.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, filename));
 //});
 
-builder.Services.AddControllers();
+builder.Services.AddControllers(opt =>
+{
+    opt.Filters.Add<NotificationFilter>();
+});
+
+//var dataSourceBuilder = new NpgsqlDataSourceBuilder(builder.Configuration.GetConnectionString("DefaultConnection"));
+////dataSourceBuilder.MapEnum<Mood>();
+////dataSourceBuilder.UseNodaTime();
+//var dataSource = dataSourceBuilder.Build();
+
+//builder.Services.AddDbContextPool<RepositoryContext>(opt => opt.UseNpgsql(dataSource));
+
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddAutoMapper(typeof(CompraProfile));
+builder.Services.AddDependencyInjection();
+
+builder.Services.AddDbContextPool<RepositoryContext>(opt =>
+    opt.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    ServiceLocator.Initialize(scope.ServiceProvider.GetService<IContainer>());
+}
+
 
 // Configure the HTTP request pipeline.
 
