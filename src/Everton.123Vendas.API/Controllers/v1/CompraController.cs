@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Everton._123Vendas.API.Models.Request;
+using Everton._123Vendas.API.Models.Response;
 using Everton._123Vendas.Domain.Entities;
 using Everton._123Vendas.Domain.Interfaces.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -36,13 +37,27 @@ namespace Everton._123Vendas.API.Controllers.v1
         }
 
         [HttpGet("{id:guid}")]
-        public async Task<IActionResult> ObterCompra(Guid id)
+        public async Task<IActionResult> ObterCompra([FromRoute] Guid id)
         {
             var compra = await _compraService.GetAsync(id);
             if (compra == null)
                 return Ok();
 
-            return Ok(compra);
+            return Ok(_mapper.Map<CompraDetalheResponse>(compra));
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> ObterTodasCompras()
+        {
+            var compras = await _compraService.GetAllAsync();
+            return Ok(_mapper.Map<IEnumerable<CompraResponse>>(compras));
+        }
+
+        [HttpDelete("{id:guid}")]
+        public async Task<IActionResult> CancelarCompra(Guid id)
+        {
+            await _compraService.DeleteAsync(id);
+            return Ok();
         }
     }
 }

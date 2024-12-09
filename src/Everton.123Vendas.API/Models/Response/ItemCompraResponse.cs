@@ -7,5 +7,7 @@
         public int Quantidade { get; set; }
         public decimal ValorUnitario { get; set; }
         public decimal Desconto { get; set; }
+        public decimal ValorDesconto { get; set; }
+        public decimal ValorTotal { get; set; }
     }
 }
