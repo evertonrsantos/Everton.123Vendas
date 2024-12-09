@@ -27,6 +27,14 @@ namespace Everton._123Vendas.API.Controllers.v1
             return Ok(new { id = compraId });
         }
 
+        [HttpPut("{id:guid}")]
+        public async Task<IActionResult> AlterarCompraAsync([FromRoute] Guid id, [FromBody] CompraRequest model)
+        {
+            var compra = _mapper.Map<Compra>(model);
+            await _compraService.UpdateAsync(id, compra);
+            return Ok();
+        }
+
         [HttpGet("{id:guid}")]
         public async Task<IActionResult> ObterCompra(Guid id)
         {
