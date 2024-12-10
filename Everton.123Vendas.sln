@@ -21,6 +21,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Tests", "4 - Tests", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Everton.123Vendas.Infrastructure.IoC", "src\Everton.123Vendas.Infrastructure.IoC\Everton.123Vendas.Infrastructure.IoC.csproj", "{9F38DA70-96FB-4694-BDA8-BB6839258748}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Everton.123Vendas.Tests", "src\Everton.123Vendas.Tests\Everton.123Vendas.Tests.csproj", "{70F21A35-EB34-4A5B-9880-9721C51B42AD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{9F38DA70-96FB-4694-BDA8-BB6839258748}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F38DA70-96FB-4694-BDA8-BB6839258748}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F38DA70-96FB-4694-BDA8-BB6839258748}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70F21A35-EB34-4A5B-9880-9721C51B42AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70F21A35-EB34-4A5B-9880-9721C51B42AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70F21A35-EB34-4A5B-9880-9721C51B42AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70F21A35-EB34-4A5B-9880-9721C51B42AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -57,5 +63,6 @@ Global
 		{FFA4C362-7B28-44A2-AFA2-12101756DBE2} = {33610459-1294-494A-A3B1-8C74124FDF32}
 		{2DB97C24-9772-4A5D-9A76-5DDF9A844025} = {33610459-1294-494A-A3B1-8C74124FDF32}
 		{9F38DA70-96FB-4694-BDA8-BB6839258748} = {33610459-1294-494A-A3B1-8C74124FDF32}
+		{70F21A35-EB34-4A5B-9880-9721C51B42AD} = {824CDD27-E4D2-406C-8765-C7C49E29B3FA}
 	EndGlobalSection
 EndGlobal
