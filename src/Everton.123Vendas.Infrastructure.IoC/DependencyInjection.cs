@@ -14,7 +14,7 @@ namespace Everton._123Vendas.Infrastructure.IoC
         {
             //Notification
             service.AddScoped<INotification, NotificationService>();
-            service.AddSingleton<IContainer, ServiceProviderProxy>();
+            //service.AddSingleton<IServiceProvider, ServiceProvider>();
 
             //Dependency Injection of Services and Repositories
             service.AddDependencyByName(typeof(EventPublisherBase<>).Assembly, "Publisher");
