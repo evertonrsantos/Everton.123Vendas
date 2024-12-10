@@ -68,7 +68,7 @@ var app = builder.Build();
 
 using (var scope = app.Services.CreateScope())
 {
-    ServiceLocator.Initialize(scope.ServiceProvider.GetService<IContainer>());
+    ServiceLocator.Initialize(scope.ServiceProvider);
 }
 
 
